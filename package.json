@@ -17,6 +17,13 @@
   "author": "wooddang",
   "type": "module",
   "main": "app.js",
+  "imports": {
+    "#services/*": "./src/services/*",
+    "#api/*": "./src/api/*",
+    "#routes/*": "./src/api/routes/*",
+    "#config/*": "./src/config/*",
+    "#loaders/*": "./src/loaders/*"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "nodemon --watch ./src ./src/app.js"
@@ -26,6 +33,7 @@
     "dotenv": "^17.2.4",
     "express": "^5.2.1",
     "mysql2": "^3.16.3",
-    "nodemon": "^3.1.11"
+    "nodemon": "^3.1.11",
+    "winston": "^3.19.0"
   }
 }
