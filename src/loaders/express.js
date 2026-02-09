@@ -6,7 +6,7 @@ import routes from "#api/index.js";
 
 export default ({ app }) => {
   const Logger = loggerCreator("express");
-  Logger.info("Enter");
+  Logger.verbose("Entered");
   app.use(cors());
   app.use(express.json());
 

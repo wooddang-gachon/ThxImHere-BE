@@ -3,7 +3,7 @@ import loggerCreator from "#loaders/logger.js";
 
 export default () => {
   const Logger = loggerCreator("Loader");
-  Logger.info("Enter");
+  Logger.verbose("Entered");
 
   const app = Router();
 

@@ -69,7 +69,7 @@ if (config.logger.NODE_ENV === "development") {
 // 3. Logger 인스턴스 생성
 const loggerCreator = (logLabel) => {
   return winston.createLogger({
-    level: config.logs?.level || "info", // 설정이 없으면 기본 info
+    level: config.logger.LEVELS || "info", // 설정이 없으면 기본 info
     levels: winston.config.npm.levels,
     format: combine(
       label({ label: logLabel || "none" }),
