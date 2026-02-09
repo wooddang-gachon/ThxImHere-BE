@@ -1,0 +1,24 @@
+{
+  "name": "thximhere-be",
+  "version": "1.0.0",
+  "description": "study project",
+  "keywords": [
+    "study"
+  ],
+  "homepage": "https://github.com/wooddang-gachon/ThxImHere-BE#readme",
+  "bugs": {
+    "url": "https://github.com/wooddang-gachon/ThxImHere-BE/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wooddang-gachon/ThxImHere-BE.git"
+  },
+  "license": "ISC",
+  "author": "wooddang",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon --watch ./src ./src/app.js"
+  }
+}
