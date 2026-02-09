@@ -1,11 +1,11 @@
 import express from "express";
 import cors from "cors";
-import LoggerInstance from "#loaders/logger.js";
+import loggerCreator from "#loaders/logger.js";
 import config from "#config/index.js";
 import routes from "#api/index.js";
 
 export default ({ app }) => {
-  const Logger = LoggerInstance("express");
+  const Logger = loggerCreator("express");
   Logger.info("Enter");
   app.use(cors());
   app.use(express.json());

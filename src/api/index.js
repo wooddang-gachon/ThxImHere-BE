@@ -1,8 +1,8 @@
 import { Router } from "express";
-import LoggerInstance from "#loaders/logger.js";
+import loggerCreator from "#loaders/logger.js";
 
 export default () => {
-  const Logger = LoggerInstance("Loader");
+  const Logger = loggerCreator("Loader");
   Logger.info("Enter");
 
   const app = Router();

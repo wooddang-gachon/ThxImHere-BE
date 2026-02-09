@@ -1,8 +1,9 @@
 import express from "express";
 import config from "#config/index.js";
 import loaders from "#loaders/index.js";
+import loggerCreator from "#loaders/logger.js";
 
-console.log("hello world");
+const Logger = loggerCreator("app");
 
 async function startServer() {
   const app = express();
@@ -11,6 +12,7 @@ async function startServer() {
   app
     .listen(config.port, () => {})
     .on("error", (err) => {
+      Logger.error(err);
       process.exit(1);
     });
 }

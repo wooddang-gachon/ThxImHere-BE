@@ -69,7 +69,7 @@ if (config.logger.NODE_ENV === "development") {
 }
 
 // 3. Logger 인스턴스 생성
-const LoggerInstance = (logLabel) => {
+const loggerCreator = (logLabel) => {
   return winston.createLogger({
     level: config.logs?.level || "info", // 설정이 없으면 기본 info
     levels: winston.config.npm.levels,
@@ -83,7 +83,7 @@ const LoggerInstance = (logLabel) => {
   });
 };
 
-export default LoggerInstance;
+export default loggerCreator;
 
 // 레벨 (Level),우선순위 (Priority),설명
 // error,0,시스템의 치명적인 오류
