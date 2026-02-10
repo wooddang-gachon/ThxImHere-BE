@@ -1,12 +1,10 @@
 // src/services/auth.js
+import { Container } from "typedi";
 export default class AuthService {
-  constructor(userRepo, logger) {
-    this.userRepo = userRepo; // 주입받은 Repo 저장
-    this.logger = logger; // 주입받은 Logger 저장
+  constructor() {
+    this.logger = Container.get("logger")("Auth");
   }
-
-  async signUp(userData) {
-    this.logger.info("회원가입 시도: %o", userData.id);
-    return await this.userRepo.save(userData);
+  async signIn() {
+    await this.logger.silly("signIn called");
   }
 }

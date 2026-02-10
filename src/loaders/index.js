@@ -6,6 +6,9 @@ import sqlLoader from "./mysql.js";
 export default async ({ expressApp }) => {
   const logger = loggerCreator("Loader");
   try {
+    await dependencyInjector();
+    logger.info("DI Loaded");
+
     logger.info("Loader Entered");
 
     await expressLoader({ app: expressApp });
@@ -13,9 +16,6 @@ export default async ({ expressApp }) => {
 
     await sqlLoader;
     logger.info("sql Loaded");
-
-    await dependencyInjector();
-    logger.info("DI Loaded");
 
     logger.info("Loader done");
   } catch (e) {
