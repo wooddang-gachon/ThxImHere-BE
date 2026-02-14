@@ -38,7 +38,6 @@ if (config.logger.NODE_ENV === "development") {
       filename: `${logDir}/dev_error.log`,
       level: "error",
       format: combine(
-        colorize(), // 레벨별 색상 적용
         splat(), // %d, %s 등 포맷팅 지원
         devLogFormat,
       ), // 커스텀 텍스트 포맷 적용
@@ -46,7 +45,6 @@ if (config.logger.NODE_ENV === "development") {
     new winston.transports.File({
       filename: `${logDir}/dev_combined.log`,
       format: combine(
-        colorize(), // 레벨별 색상 적용
         splat(), // %d, %s 등 포맷팅 지원
         devLogFormat,
       ), // 커스텀 텍스트 포맷 적용
@@ -71,7 +69,7 @@ if (config.logger.NODE_ENV === "development") {
 // 3. Logger 인스턴스 생성
 const loggerCreator = (logLabel) => {
   return winston.createLogger({
-    level: config.logs?.level || "info", // 설정이 없으면 기본 info
+    level: config.logger.LEVELS || "info", // 설정이 없으면 기본 info
     levels: winston.config.npm.levels,
     format: combine(
       label({ label: logLabel || "none" }),
