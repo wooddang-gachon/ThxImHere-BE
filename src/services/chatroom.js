@@ -1,4 +1,4 @@
-// src/services/auth.js
+
 export default class ChatroomService {
   constructor(userRepo, logger) {
     this.userRepo = userRepo; // 주입받은 Repo 저장

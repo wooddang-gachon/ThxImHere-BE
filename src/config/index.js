@@ -26,6 +26,7 @@ export default {
    */
   api: {
     prefix: process.env.API_PREFIX || "/api",
+    openWeaterKey: process.env.API_KEY_OPENWEATHER,
   },
   logger: {
     NODE_ENV: process.env.NODE_ENV,

@@ -1,11 +1,8 @@
-class User {
-  constructor({ id, name, pw, num }) {
+export default class User {
+  constructor({ num, name, age, location }) {
     this.num = num;
-    this.id = id;
-    this.pw = pw;
-    this.birth = birth || null;
-    this.phone = phone || null;
+    this.name = name;
+    this.age = age;
+    this.location = location;
   }
 }
-
-export default User;
